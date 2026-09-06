@@ -2,24 +2,21 @@
 
 Practice for the BACP Certificate of Proficiency.
 
-Live: https://jeromyjsmith.github.io/the-weighted-paper/
+Live: https://jeromyjsmith.github.io/
 
-Open `index.html` in a browser, or host **this folder** on GitHub Pages as the site root. GitHub will not publish a `/Main-App` subfolder.
+This repository is a [GitHub Pages user site](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#types-of-github-pages-sites). The repo is named `jeromyjsmith.github.io`, so the site is served at the account root.
 
-## Host on GitHub Pages
+## Hosting
 
-This folder is the site. Push it as the repository root, not the parent study-guide folder.
+Static HTML. No Jekyll. Publishing uses the official [static HTML Pages workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
-1. Create a new GitHub repository.
-2. From this folder: `git init`, commit, add the remote, push `main`.
-3. Settings → Pages → Deploy from a branch → `main` / `/` (root).
-4. `.nojekyll` is already here, so GitHub will not run Jekyll on the files.
+Open `index.html` locally, or push `main` and wait for the Actions deploy.
 
-No build step. Fonts load from Fontshare. Theme and in-progress sittings save in the browser (`localStorage`).
+Theme and in-progress sittings save in the browser (`localStorage`).
 
 ## What is here
 
-1. Guide, section types, exam prep, library. How a section is scored, and short cards for the day.
+1. Guide, section types, exam prep, library.
 2. Skills drill. Thirty short counselling scenes.
 3. Weighted cases. Priya and Callum, twelve sections.
 4. Full mock. Six cases, two hours. Indicated or Not indicated until the end.
