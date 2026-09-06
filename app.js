@@ -132,18 +132,17 @@ const DEMO = [
   const KEYS = ['core', 'bonus', 'poor', 'serious'];
   Object.entries(VARIANTS).forEach(([id, v]) => {
     const c = COUNT[id], tot = c.reduce((a, b) => a + b, 0);
-    const lab = (n, i) => {
+    const bar = c.map((n, i) => {
+      if (!n) return '';
       const pts = TIERS[KEYS[i]].pts;
-      return n + ' × ' + (pts > 0 ? '+' : '−') + Math.abs(pts);
-    };
-    const bar = c.map((n, i) => n ? `<span style="--bc:var(--t-${KEYS[i]});flex:${n}" title="${lab(n, i)}"></span>` : '').join('');
-    const eq = c.map((n, i) => n ? `<span class="eq t-${KEYS[i]}"><i></i>${lab(n, i)}</span>` : '').join('');
+      const t = n + '×' + (pts > 0 ? '+' : '−') + Math.abs(pts);
+      return `<span style="--bc:var(--t-${KEYS[i]});flex:${n}">${t}</span>`;
+    }).join('');
     const el = document.createElement('article');
     el.className = 'shape';
     el.innerHTML = `
       <div class="shape-h"><span class="shape-id">${id}</span><span class="shape-nm">${v.name}</span><span class="shape-nk">${v.nick}</span></div>
       <div class="bar" role="img" aria-label="${v.comp}">${bar}</div>
-      <div class="shape-eq">${eq}</div>
       <div class="shape-meta"><span>Max <b>${v.max > 0 ? '+' : ''}${v.max}</b></span><span>Min <b>${v.min}</b></span><span>Pass <b>${v.pass}</b></span><span>Headroom <b>${v.headroom ? '+' + v.headroom : '0'}</b></span><span>Options <b>${tot}</b></span></div>
       <p>${v.body}</p>
       <div class="shape-foot"><span class="tests"><b>Tests:</b> ${v.tests}</span><span class="failm"><b>Failure mode:</b> ${v.fail}</span></div>`;
