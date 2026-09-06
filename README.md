@@ -2,6 +2,8 @@
 
 Practice for the BACP Certificate of Proficiency.
 
+Live: https://jeromyjsmith.github.io/the-weighted-paper/
+
 Open `index.html` in a browser, or host **this folder** on GitHub Pages as the site root. GitHub will not publish a `/Main-App` subfolder.
 
 ## Host on GitHub Pages
